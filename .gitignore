@@ -1,0 +1,13 @@
+# Dependencies
+FrontEnd/node_modules/
+FrontEnd/dist/
+FrontEnd/.angular/
+HospitalDemo/target/
+
+# Editors
+**/.idea/
+**/.vscode/
+
+# OS/Logs
+**/*.log
+**/.DS_Store

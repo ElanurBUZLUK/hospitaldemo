@@ -1,0 +1,86 @@
+<div class="App">
+  <section id="home" class="hero-section">
+    <div style="text-align: center">
+      <h3 style="color: brown;">{{ message }}</h3>
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <form [formGroup]="patientForm" (ngSubmit)="registerPatNow()">
+              <div class="text-center">
+                <h1 class="pat-reg-color">Patient Registration</h1>
+              </div>
+              <fieldset>
+                <!-- Patient ID Field -->
+                <div class="form-group">
+                  <label for="patientId"><strong>Patient ID</strong>:</label>
+                  <input type="number" formControlName="patientId" class="form-control" placeholder="Enter Patient ID" />
+                </div>
+
+                <!-- Name Field -->
+                <div class="form-group">
+                  <label for="patientName"><strong>Name</strong>:</label>
+                  <input type="text" formControlName="patientName" class="form-control phone" placeholder="Enter your fullname..." />
+                </div>
+
+                <!-- Date of Visit Field -->
+                <div class="form-group">
+                  <label for="dateOfVisit"><strong>Date of Visit</strong>:</label>
+                  <input type="text" formControlName="dateOfVisit" class="form-control phone" placeholder="Enter date of visit..." />
+                </div>
+
+                <!-- City Field -->
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <select class="form-control" formControlName="city" (change)="onCityChange()">
+                    <option [ngValue]="null">Select a city</option>
+                    <option *ngFor="let city of cities" [ngValue]="city">{{ city.cityName }}</option>
+                  </select>
+                </div>
+
+                <!-- District Field -->
+                <div class="form-group">
+                  <label for="district">District</label>
+                  <select class="form-control" formControlName="district" [disabled]="!availableDistricts.length">
+                    <option [ngValue]="null">Select a district</option>
+                    <option *ngFor="let district of availableDistricts" [ngValue]="district">{{ district.districtName }}</option>
+                  </select>
+                </div>
+
+                <!-- Doctor Selection -->
+                <div class="form-group">
+                  <label for="doctorId"><strong>Doctor</strong>:</label>
+                  <select class="form-control" formControlName="doctorId">
+                    <option [ngValue]="null">Select a doctor</option>
+                    <option *ngFor="let d of doctors" [ngValue]="d.doctorId">{{ d.name }} ({{ d.specialty }})</option>
+                  </select>
+                </div>
+
+                <!-- Prescription Field -->
+                <div class="form-group">
+                  <label for="prescription"><strong>Prescription</strong>:</label>
+                  <input type="text" formControlName="prescription" class="form-control phone" placeholder="Enter Speciality..." />
+                </div>
+
+                <!-- Phone Numbers Field 
+                <div formArrayName="phoneNumbers">
+                  <div *ngFor="let phone of phoneNumbers.controls; let i = index" class="form-group">
+                    <label [for]="'phoneNumber' + (i + 1)">Phone Number {{ i + 1 }}</label>
+                    <input [id]="'phoneNumber' + (i + 1)" class="form-control" [formControlName]="i" type="text" placeholder="Enter phone number" />
+                  </div>
+                </div>
+                <button class="btn btn-secondary" type="button" (click)="addPhoneNumberField()">Add Phone Number</button>
+-->
+                <!-- Submit Button -->
+                <div class="form-group">
+                  <input class="btn btn-primary main-btn reg-btn" type="submit" value="Register" />
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

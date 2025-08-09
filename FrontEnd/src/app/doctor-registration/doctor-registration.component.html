@@ -1,0 +1,122 @@
+<div className="App">
+  
+  <header class="header">
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" routerLink="/home">
+                <img src="assets/img/logo/logo.png" alt="Logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse sub-menu-bar"
+                id="navbarSupportedContent"
+              >
+                <ul id="nav" class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="/doctinfo">Show Doctor</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="/patientinfo">Show Patient</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="home" class="hero-section">
+    <div class="hero-shape">
+      <img src="assets/img/hero/hero-shape.svg" alt="" class="shape" />
+    </div>
+    <div style="text-align: center">
+      <h3 style="color: brown;">{{message}}</h3>
+  </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+
+            <form >
+              <div class="  text-center ">
+                  <h1 class="doct-reg-color">Doctor Registration </h1>
+              </div>
+              <fieldset>
+                 
+
+                  <div class="form-group">
+                      <label for="Name"><span class="req"> </span><strong> Name</strong>: </label>
+                      <input required type="text" [(ngModel)]="doctor.docName"  name="docName" id="docName"
+                          class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
+                  </div>
+                  <div class="form-group">
+                      <label for="speciality"><span class="req"> </span><strong> Speciality: </strong></label>
+                      <input required type="text" [(ngModel)]="doctor.doctSpecialist"  name="speciality" id="speciality"
+                          class="form-control phone" maxlength="28" placeholder="Enter Speciality..." />
+                  </div>
+
+                  <div class="form-group">
+                      <label for="age"><span class="req"></span> <strong>Age:</strong>  </label>
+                      <input class="form-control" type="number"[(ngModel)]="doctor.doctAge"   name="doctAge" id="doctAge" required
+                          placeholder="Enter Your Age" />
+                      
+                  </div>
+
+                  <div class="form-group">
+                      <label for="gender"><span class="req"> </span> <strong>Gender: </strong> </label>
+                      <input class="form-control" required type="text" [(ngModel)]="doctor.doctGender"  name="doctGender"
+                          id="doctGender" placeholder="Male/Female/Others" />
+                     
+                  </div>
+                  <div class="form-group">
+                    <label for="numberOfpatientAttneded"><span class="req"></span><strong> No. of Patients Attneded:</strong> </label>
+                    <input class="form-control" type="number" [(ngModel)]="doctor.numberOfpatientAttneded"   name="numberOfpatientAttneded" id="numberOfpatientAttneded" required
+                        placeholder="No. of Patients Attended" />
+                    
+                </div>
+
+                  <div class="form-group">
+                      <input class="btn btn-success main-btn reg-btn" type="submit" name="submit_reg" value="Register" (click)="registerDocNow()" >
+                  </div>
+              </fieldset>
+          </form>
+        
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
+            <img src="assets/img/hero/dochero.png" style="height: 100vh;" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="footer item_center">
+    <p >Developed By &nbsp; &nbsp;- &nbsp; &nbsp; <span style="color: white;">Mindtree Mind </span> </p>
+</div>
+</div>

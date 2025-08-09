@@ -1,0 +1,26 @@
+
+  .self_margin{
+    margin-top: -108px;
+  }
+  .item_center p{
+
+    text-align: center;
+    padding-top: 13px;
+  }
+  .footer{
+    height: 50px;
+  
+  }
+  .reg-btn{
+    background-color: #2f4f58;
+    margin-top: 10px;
+ }
+  .reg-btn:hover{
+     background-color: green;
+  }
+  .form-group{
+    margin-top: 10px;
+  }
+  .pat-reg-color{
+    color: #2a474e !important;
+  }

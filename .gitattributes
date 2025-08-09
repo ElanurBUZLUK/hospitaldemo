@@ -1,0 +1,9 @@
+# Windows batch dosyaları için CRLF kullan
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Shell script dosyaları için LF kullan
+*.sh text eol=lf
+
+# Tüm metin dosyalarını normalleştir
+* text=auto
